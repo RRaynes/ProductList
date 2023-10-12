@@ -5,6 +5,7 @@ public class Product {
 	String name;
 	double originalPrice;
 	double currentPrice;
+	double discount;
 	
 	Product next;
 	
@@ -14,7 +15,12 @@ public class Product {
 		this.name = name;
 		this.originalPrice = originalPrice;
 		this.currentPrice = currentPrice;
+		discount = originalPrice - currentPrice;
 		next = null;
+	}
+	
+	public Product(Product p) { //creates a dummy Product/Node
+		this(p.ID,p.name,p.originalPrice,p.currentPrice);
 	}
 	
 	public Product() { //creates a dummy Product/Node
